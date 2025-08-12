@@ -23,7 +23,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . /app
 
 # Puerto interno del contenedor (Coolify lo mapea)
-EXPOSE 8000
+EXPOSE 3000
 
 # Comando para iniciar con Gunicorn (app:app → archivo app.py con variable app)
-CMD ["gunicorn", "--bind", "0.0.0.0:8000", "app:app"]
+CMD ["gunicorn", "--bind", "0.0.0.0:3000", "app:app"]
