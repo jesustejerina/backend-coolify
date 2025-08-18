@@ -17,4 +17,4 @@ COPY . /app
 
 EXPOSE 3000
 
-CMD ["gunicorn", "--bind", "0.0.0.0:3000", "app:app"]
+CMD ["gunicorn", "--bind", "0.0.0.0:3000", "--workers", "3", "--threads", "1", "app:app"]
