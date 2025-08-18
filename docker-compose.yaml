@@ -6,6 +6,11 @@ services:
     container_name: backend_flask
     ports:
       - "3000:3000"
+  deploy:
+    resources:
+      limits:
+        cpus: '3.5'  # Deja margen para el sistema
+        memory: 900M  # ~300MB por worker
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:3000/health"]
       interval: 30s
